@@ -1,4 +1,4 @@
-# This is my package hookshelper
+# Filament Hooks helper
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/agencetwogether/hookshelper.svg?style=flat-square)](https://packagist.org/packages/agencetwogether/hookshelper)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/agencetwogether/hookshelper/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/agencetwogether/hookshelper/actions?query=workflow%3Arun-tests+branch%3Amain)
