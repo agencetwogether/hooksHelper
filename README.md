@@ -101,6 +101,10 @@ The plugin will add a toggle button to your Filament Admin Panel, left to the gl
 
 Clicking it will trigger display all hooks available in current page otherwise hide them.
 
+![image](https://raw.githubusercontent.com/agencetwogether/hooksHelper/main/assets/images/deactivated.jpg)
+
+![image](https://raw.githubusercontent.com/agencetwogether/hooksHelper/main/assets/images/activated.jpg)
+
 ### Placement
 
 The toggle button will be placed before the global search bar by default. If you want to change this, you can tweak the
