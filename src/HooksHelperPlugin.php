@@ -28,6 +28,22 @@ class HooksHelperPlugin implements Plugin
             Str::start(config('hookshelper.render_hook') ?? 'global-search.before', 'panels::'),
             fn () => view('hookshelper::switcher')
         );
+        $panel->renderHook(
+            'panels::auth.login.form.before',
+            fn () => view('hookshelper::switcher')
+        );
+        $panel->renderHook(
+            'panels::auth.password-reset.request.form.before',
+            fn () => view('hookshelper::switcher')
+        );
+        $panel->renderHook(
+            'panels::auth.password-reset.reset.form.before',
+            fn () => view('hookshelper::switcher')
+        );
+        $panel->renderHook(
+            'panels::auth.register.form.before',
+            fn () => view('hookshelper::switcher')
+        );
 
         if (ToggleHooks::getShowHooks()) {
             // Panel Hooks
@@ -63,6 +79,16 @@ class HooksHelperPlugin implements Plugin
                 });
             }
         }
+    }
+
+    public function shouldShowSwitcher(): bool
+    {
+        return Str::of(request()->route()->getName())->contains([
+            'auth.login',
+            'auth.password',
+            'auth.profile',
+            'auth.register',
+        ]);
     }
 
     public function boot(Panel $panel): void

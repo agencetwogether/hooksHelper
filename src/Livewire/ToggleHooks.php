@@ -13,7 +13,7 @@ class ToggleHooks extends Component
 
     public function mount(): void
     {
-        $this->isShow = session()->get('showHooks') ?? false;
+        $this->isShow = request()->hasCookie('showHooks') ?? session()->get('showHooks') ?? false;
     }
 
     public function changeVisibility(): Redirector
