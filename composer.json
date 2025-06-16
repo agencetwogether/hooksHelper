@@ -44,12 +44,6 @@
         "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
         "format": "vendor/bin/pint"
     },
-    "config": {
-        "sort-packages": true,
-        "allow-plugins": {
-            "pestphp/pest-plugin": true
-        }
-    },
     "extra": {
         "laravel": {
             "providers": [
