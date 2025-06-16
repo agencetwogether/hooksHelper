@@ -56,7 +56,5 @@
                 "Agencetwogether\\HooksHelper\\HooksHelperServiceProvider"
             ]
         }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    }
 }
