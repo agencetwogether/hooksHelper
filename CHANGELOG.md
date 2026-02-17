@@ -2,6 +2,10 @@
 
 All notable changes to `HooksHelper` will be documented in this file.
 
+## v0.0.5 - 2026-02-17
+
+Fix typo
+
 ## v0.0.4 - 2026-02-17
 
 Support Filament v5

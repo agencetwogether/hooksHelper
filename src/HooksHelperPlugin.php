@@ -22,7 +22,7 @@ class HooksHelperPlugin implements Plugin
 
     public function register(Panel $panel): void
     {
-        Livewire::component('hookshelper::toggle-hooks', ToggleHooks::class);
+        Livewire::component('hookshelper.toggle-hooks', ToggleHooks::class);
 
         $panel->renderHook(
             Str::start(config('hookshelper.render_hook') ?? 'global-search.before', 'panels::'),
