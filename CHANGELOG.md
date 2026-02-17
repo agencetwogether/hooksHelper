@@ -2,6 +2,10 @@
 
 All notable changes to `HooksHelper` will be documented in this file.
 
+## v0.0.4 - 2026-02-17
+
+Support Filament v5
+
 ## v0.0.3 - 2025-09-25
 
 Add german translation
