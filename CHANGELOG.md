@@ -2,6 +2,10 @@
 
 All notable changes to `HooksHelper` will be documented in this file.
 
+## 0.1.0 - 2026-03-02
+
+**Full Changelog**: https://github.com/agencetwogether/hooksHelper/compare/0.0.5...0.1.0
+
 ## v0.0.5 - 2026-02-17
 
 Fix typo
