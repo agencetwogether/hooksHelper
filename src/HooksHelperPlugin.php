@@ -4,6 +4,7 @@ namespace Agencetwogether\HooksHelper;
 
 use Agencetwogether\HooksHelper\Livewire\ToggleHooks;
 use Blade;
+use Filament\Actions\View\ActionsRenderHook;
 use Filament\Contracts\Plugin;
 use Filament\Panel;
 use Filament\Tables\View\TablesRenderHook;
@@ -52,6 +53,19 @@ class HooksHelperPlugin implements Plugin
             $tableHooks = new ReflectionClass(TablesRenderHook::class);
             // Widget Hooks
             $widgetHooks = new ReflectionClass(WidgetsRenderHook::class);
+            // Action Hooks
+            // Since Filament 4
+            if (class_exists(ActionsRenderHook::class)) {
+                $actionHooks = new ReflectionClass(ActionsRenderHook::class);
+                $actionHooks = $actionHooks->getConstants();
+                foreach ($actionHooks as $hook) {
+                    $panel->renderHook($hook, function () use ($hook) {
+                        return Blade::render('<div style="border: solid red 1px; padding: 2px;">{{ $name }}</div>', [
+                            'name' => $hook,
+                        ]);
+                    });
+                }
+            }
 
             $panelHooks = $panelHooks->getConstants();
             $tableHooks = $tableHooks->getConstants();
@@ -60,21 +74,21 @@ class HooksHelperPlugin implements Plugin
             foreach ($panelHooks as $hook) {
                 $panel->renderHook($hook, function () use ($hook) {
                     return Blade::render('<div style="border: solid red 1px; padding: 2px;">{{ $name }}</div>', [
-                        'name' => Str::of($hook)->remove('tables::'),
+                        'name' => $hook,
                     ]);
                 });
             }
             foreach ($tableHooks as $hook) {
                 $panel->renderHook($hook, function () use ($hook) {
                     return Blade::render('<div style="border: solid red 1px; padding: 2px;">{{ $name }}</div>', [
-                        'name' => Str::of($hook)->remove('tables::'),
+                        'name' => $hook,
                     ]);
                 });
             }
             foreach ($widgetHooks as $hook) {
                 $panel->renderHook($hook, function () use ($hook) {
                     return Blade::render('<div style="border: solid red 1px; padding: 2px;">{{ $name }}</div>', [
-                        'name' => Str::of($hook)->remove('tables::'),
+                        'name' => $hook,
                     ]);
                 });
             }
