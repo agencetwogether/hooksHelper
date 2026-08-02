@@ -2,6 +2,20 @@
 
 All notable changes to `HooksHelper` will be documented in this file.
 
+## 0.2.0 - 2026-08-02
+
+### What's Changed
+
+* Fix https://github.com/agencetwogether/hooksHelper/issues/4
+* Bump actions/checkout from 4 to 6 by @dependabot[bot] in https://github.com/agencetwogether/hooksHelper/pull/6
+* Bump stefanzweifel/git-auto-commit-action from 5 to 7 by @dependabot[bot] in https://github.com/agencetwogether/hooksHelper/pull/5
+
+### New Contributors
+
+* @dependabot[bot] made their first contribution in https://github.com/agencetwogether/hooksHelper/pull/6
+
+**Full Changelog**: https://github.com/agencetwogether/hooksHelper/compare/0.1.0...0.2.0
+
 ## 0.1.0 - 2026-03-02
 
 **Full Changelog**: https://github.com/agencetwogether/hooksHelper/compare/0.0.5...0.1.0
