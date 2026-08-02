@@ -1,3 +1,3 @@
-<div class="relative flex">
+<div class="auth-hooks-switcher relative flex">
     @livewire('hookshelper.toggle-hooks')
 </div>

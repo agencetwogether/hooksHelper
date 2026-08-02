@@ -4,8 +4,8 @@ namespace Agencetwogether\HooksHelper\Livewire;
 
 use Filament\Notifications\Notification;
 use Illuminate\Contracts\View\View;
-use Illuminate\Routing\Redirector;
 use Livewire\Component;
+use Livewire\Features\SupportRedirects\Redirector;
 
 class ToggleHooks extends Component
 {

@@ -79,6 +79,24 @@ php artisan vendor:publish --tag="hookshelper-views"
 
 ## Setup
 
+> **Requirement:** this plugin doesn't change any authorization logic, but it does surface an
+> unrelated Filament requirement you may hit while testing it across environments: your `User`
+> model must implement `canAccessPanel(Panel $panel): bool` from `Filament\Models\Contracts\FilamentUser`,
+> otherwise Filament returns a 403 for every panel, regardless of this plugin's state.
+>
+> ```php
+> use Filament\Models\Contracts\FilamentUser;
+> use Filament\Panel;
+>
+> class User extends Authenticatable implements FilamentUser
+> {
+>     public function canAccessPanel(Panel $panel): bool
+>     {
+>         return true; // or your own logic (role check, environment check, ...)
+>     }
+> }
+> ```
+
 First, instantiate the plugin in your Panel's configuration:
 
 ```php
@@ -91,6 +109,29 @@ public function panel(Panel $panel) : Panel
     return $panel
         ->plugins([
             HooksHelperPlugin::make(),
+        ]);
+}
+```
+
+### Activation by environment
+
+By default, the plugin only activates itself when `APP_ENV=local`. In any other environment
+(staging, production, testing, ...) it registers nothing at all, so there's no risk of the hooks
+switcher or debug overlays leaking into production.
+
+If you want the plugin to stay active regardless of the environment, chain `->alwaysEnabled()`
+when registering it:
+
+```php
+use Agencetwogether\HooksHelper\HooksHelperPlugin;
+
+...
+
+public function panel(Panel $panel) : Panel
+{
+    return $panel
+        ->plugins([
+            HooksHelperPlugin::make()->alwaysEnabled(),
         ]);
 }
 ```

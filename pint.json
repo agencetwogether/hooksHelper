@@ -1,6 +1,7 @@
 {
     "preset": "laravel",
     "rules": {
+        "Pint/laravel_blade": true,
         "blank_line_before_statement": true,
         "concat_space": {
             "spacing": "one"
