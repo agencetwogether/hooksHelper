@@ -2,6 +2,14 @@
 
 All notable changes to `HooksHelper` will be documented in this file.
 
+## 0.2.1 - 2026-08-02
+
+### What's Changed
+
+* Bump actions/checkout from 6 to 7 by @dependabot[bot] in https://github.com/agencetwogether/hooksHelper/pull/7
+
+**Full Changelog**: https://github.com/agencetwogether/hooksHelper/compare/0.2.0...0.2.1
+
 ## 0.2.0 - 2026-08-02
 
 ### What's Changed
