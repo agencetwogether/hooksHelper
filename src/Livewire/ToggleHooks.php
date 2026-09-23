@@ -4,6 +4,7 @@ namespace Agencetwogether\HooksHelper\Livewire;
 
 use Filament\Notifications\Notification;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Livewire\Component;
 use Livewire\Features\SupportRedirects\Redirector;
 
@@ -16,7 +17,7 @@ class ToggleHooks extends Component
         $this->isShow = request()->hasCookie('showHooks') ?? session()->get('showHooks') ?? false;
     }
 
-    public function changeVisibility(): Redirector
+    public function changeVisibility(): Redirector | RedirectResponse
     {
         $this->isShow = ! $this->isShow;
 
